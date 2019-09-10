@@ -1,0 +1,689 @@
+@import 'partials/_media-queries';
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,700');
+
+$white: #ffffff;
+$black: #000000;
+
+$red: #EA4335;
+$green: #34A853;
+$blue: #368DD5;
+
+$smBreak: 500px;
+$mdBreak: 768px;
+
+$fontStack: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+
+/* ==========================================================================
+    Reset 
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+
+  font-family: $fontStack;
+  font-weight: 300;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+    Utility/Typograph
+   ========================================================================== */
+// Image Replace
+%ir {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.btn {
+  display: block;
+
+  width: 100%;
+  max-width: 320px;
+
+  margin: 0 auto;
+
+  padding: 15px 5px;
+
+  color: $white;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.55px;
+  background: $blue;
+
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.60);
+
+  transition: transform 205ms ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &--success {
+    @extend .btn;
+    background: $green;
+    padding: 13px 5px;
+
+    i {
+      margin-right: 5px;
+      font-size: 30px;
+    }
+
+    &:hover {
+      transform: scale(1);
+      cursor: default;
+    }
+  }
+
+  &--red {
+    @extend .btn;
+    background: $red;
+  }
+
+  &.hidden {
+    display: none;
+  }
+}
+
+.link {
+  &--endstream {
+    position: relative;
+    top: 50px;
+
+    display: inline-block;
+    margin-top: 30px;
+    color: $red;
+    text-decoration: none;
+
+    transition: top 250ms ease;
+
+    &.visible {
+      top: -1px;
+    }
+
+    &::before {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+
+      display: block;
+
+      width: 0;
+      height: 1px;
+
+      background: $red;
+
+      transition: 250ms ease;
+
+      content: '';
+    }
+
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+%notification {
+  background: rgba(255, 255, 255, 0.85);
+
+  padding: 15px 10px;
+
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.50);
+
+  transition: left 250ms ease;
+
+  &__text {
+    margin: 0 0 10px;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  &__btn {
+    position: relative;
+
+    color: $blue;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.55px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &::before {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+
+      display: block;
+
+      width: 0;
+      height: 1px;
+
+      background: $blue;
+
+      transition: 250ms ease;
+
+      content: '';
+    }
+
+    &:hover {
+      &::before {
+        width: calc(100% - 1px);
+      }
+    }
+  }
+}
+
+#testAnimation {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  z-index: 300;
+
+  font-size: 28px;
+}
+
+.cloud-shape {
+  &__path {
+    &--1 { transform-origin: 82px 82px; }
+    &--2 { transform-origin: 42px 42px; }
+    &--3 { transform-origin: 61px 61px; }
+    &--4 { transform-origin: 48px 48px; }
+    &--5 { transform-origin: 61px 50px; }
+    &--6 { transform-origin: 47px 47px; }
+    &--7 { transform-origin: 61px 61px; }
+    &--8 { transform-origin: 49px 49px; }
+    &--9 { transform-origin: 44px 44px; }
+  }
+}
+/* ==========================================================================
+    Dashboard
+   ========================================================================== */
+.main {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+  
+  padding: 10px 20px 40px;
+
+  background-image: linear-gradient(-171deg, #368DD5 0%, #20364C 83%);
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &__header {
+    padding: 10px 20px 40px 20px;
+
+    text-align: center;
+
+    &--headline {
+      margin: 20px 0 10px;
+      color: $white;
+      font-size: 24px;
+      font-weight: 300;
+
+      @include mq($min-width: $smBreak) {
+        margin: 40px 0 10px;
+        font-size: 36px;
+      }
+    }
+
+    &--subline {
+      position: relative;
+      top: 0;
+
+      margin: 0;
+      color: $white;
+      font-size: 16px;
+      font-weight: 300;
+      transition: all 250ms ease;
+
+      @include mq($min-width: $smBreak) {
+        font-size: 18px;
+      }
+
+      &.hidden {
+        opacity: 0;
+        top: 20px;
+      }
+    }
+  }
+
+  &__content {
+    flex: 1;
+
+    width: 100%;
+    max-width: 1100px;
+
+    padding: 10px 0;
+    
+    margin: 0 auto;
+
+    @include mq($min-width: $mdBreak) {
+      display: flex;
+      align-items: center;
+      flex: 1;
+
+      padding: 20px 0 20px;
+    }
+  }
+
+  &__instructions {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+
+    text-align: center;
+
+    &.hidden {
+      p, input {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__footer {
+    padding: 20px 0 0;
+
+    text-align: center;
+    overflow: hidden;
+  }
+}
+
+.social-item {
+  position: relative;
+
+  width: 100%;
+  max-width: 320px;
+
+  margin: 0 auto 10px;
+
+  text-align: center;
+
+  @include mq($min-width: $mdBreak) {
+    margin-bottom: 0;
+  }
+
+  &.online {
+    .social-item__status {
+      background-image: url('../img/status-online.svg');
+    }
+    .social-item__switch--wrapper {
+      opacity: 0;
+      visibility: not-visible;
+    }
+  }
+
+  &.offline {
+    .social-item__status {
+      background-image: url('../img/status-offline.svg');
+    }
+    .social-item__switch--wrapper {
+      opacity: 0;
+    }
+  }
+
+  &__img {
+    a {
+      display: flex;
+      justify-content: center;
+
+      height: 120px;
+    }
+  }
+
+  &__time {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 0;  
+
+    color: $white;
+  }
+
+  &__status {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 48px;
+    margin-top: 15px;
+
+    background-repeat: no-repeat;
+    background-position: center bottom;
+  }
+
+  &__switch {
+    // Hide default button
+    height: 0;
+    width: 0;
+    visibility: hidden;
+
+    &--wrapper {
+      // Used to get "on/off" next to the toggle
+      position: relative;
+      display: inline-block;
+      z-index: 10;
+
+      color: $white;
+      font-size: 14px;
+      font-weight: 400;
+
+      &::before {
+        position: absolute;
+        bottom: 2px;
+        left: -25px;
+        display: inline-block;
+        content: 'Off';
+      }
+
+      &::after {
+        position: absolute;
+        bottom: 2px;
+        right: -25px;
+        display: inline-block;
+        content: 'On';
+      }
+
+    }
+
+    &::before {
+      position: absolute;
+      top: -10px;
+      left: -30px;
+      content: 'On';
+    }
+
+    &:checked + label:after {
+      background: $green;
+
+      left:  105%;
+      transform: translateX(-105%);
+    }
+
+    &--label {
+      position: relative;
+      display: block;
+
+      width: 90px;
+      height: 20px;
+
+      margin: 0 auto;
+
+      cursor: pointer;
+      text-indent: -9999px;
+
+      background: $white;
+      border: 1px solid #5D5D5D;
+
+      border-radius: 10px;
+      box-shadow: inset 2px 2px 4px 0 rgba(0,0,0,0.50);
+
+      &::after {
+        position: absolute;
+        top: -3px;
+        left: 0;
+        width: 25px;
+        height: 25px;
+
+        background: #BBC2C8;
+        border-radius: 100px;
+
+        transition: 0.3s;
+
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+
+        content: '';
+      }
+    }
+  }
+
+  &__notification {
+    @extend %notification;
+    position: absolute;
+    top: -30px;
+    left: 0;
+
+    z-index: 120;
+
+    display: none;
+
+    width: 100%;
+
+    text-align: left;
+
+    background: transparent;
+    box-shadow: none;
+
+    &.visible {
+      display: block;
+    }
+
+    &--facebook {
+      @extend .social-item__notification;
+
+      transition: opacity 250ms ease;
+
+      p, a {
+        opacity: 0;
+        transition: opacity 250ms ease;
+      }
+
+      svg {
+        max-width: 100%;
+        opacity: 0.9;
+      }
+
+      &.fadeout {
+        opacity: 0;
+      }
+    }
+
+    &--text {
+      @extend %notification__text;
+    }
+
+    &--link {
+      @extend %notification__btn;
+      margin-right: 10px;
+    }
+
+    &--content {
+      position: absolute;
+      top: 50%;
+      left: 60px;
+      margin-top: -10px;
+
+      width: calc(100% - 100px);
+
+      transform: translateY(-50%);
+    }
+  }
+}
+
+/* ==========================================================================
+    Instructions/Add Title section
+   ========================================================================== */
+.instructions {
+  &__wrapper {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  &__text {
+    width: 100%;
+    
+    margin: 0 auto 20px;
+    color: $white;
+    font-size: 24px;
+    line-height: 32px;
+
+    transition: opacity 250ms ease;
+  }
+
+  &__caption {
+    margin: 10px auto;
+    color: $white;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 18px;
+    
+    transition: opacity 250ms ease;
+    
+    &--error {
+      @extend .instructions__caption;
+      display: none;
+      margin-top: 5px;
+      margin-bottom: 0;
+      color: $red;
+      font-style: normal;
+
+      &.visible {
+        display: block;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    max-width: 480px;
+
+    padding: 5px 0 3px;
+
+    color: $white;
+    font-size: 16px;
+    font-weight: 300;
+    
+    text-align: center;
+
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $white;
+
+    transition: opacity 250ms ease;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+/* ==========================================================================
+    Popup
+   ========================================================================== */
+.popup {
+  width: 100%;
+  max-width: 750px;
+  padding: 0 20px;
+  margin: 0 auto;
+
+  text-align: center;
+
+  &__text {
+    margin-bottom: 20px;
+    color: $white;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  // To be removed
+  &__caption {
+    max-width: 500px;
+    margin: 10px auto 40px;
+    color: $white;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 18px;
+    text-align: left;
+    
+    &--error {
+      @extend .instructions__caption;
+      display: none;
+      margin-top: 5px;
+      margin-bottom: 0;
+      color: $red;
+      font-style: normal;
+
+      &.visible {
+        display: block;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    max-width: 500px;
+
+    padding: 5px 0 2px;
+
+    color: $white;
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $white;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+/* ==========================================================================
+    Notifications
+   ========================================================================== */
+.token-notification {
+  @extend %notification;
+  position: fixed;
+  bottom: 20px;
+  left: -400px;
+
+  z-index: 100;
+  width: calc(100% - 40px);
+  max-width: 350px;
+
+  &.visible {
+    left: 20px;
+  }
+
+  &__text {
+    @extend %notification__text;
+  }
+
+  &__btn {
+    @extend %notification__btn;
+  }
+}

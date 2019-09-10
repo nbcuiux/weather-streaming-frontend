@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="89px" height="38px" viewBox="0 0 89 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>offline</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="73" height="22" rx="8"></rect>
+        <filter x="-15.8%" y="-52.3%" width="134.2%" height="213.6%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="1" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+            <feOffset dx="1" dy="1" in="shadowInner" result="shadowInner"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M13.3798828,16.2529297 C11.97623,16.2529297 10.8471722,15.7664437 9.99267578,14.793457 C9.13817932,13.8204704 8.7109375,12.5341877 8.7109375,10.9345703 C8.7109375,9.32583831 9.14045794,8.0395556 9.99951172,7.07568359 C10.8585655,6.11181159 12.0058522,5.62988281 13.4414062,5.62988281 C14.872403,5.62988281 16.0185504,6.11067228 16.8798828,7.07226562 C17.7412152,8.03385897 18.171875,9.31672375 18.171875,10.9208984 C18.171875,12.5569743 17.7412152,13.8546502 16.8798828,14.8139648 C16.0185504,15.7732795 14.8518954,16.2529297 13.3798828,16.2529297 Z M13.4003906,15.1796875 C14.434901,15.1796875 15.2346977,14.8071326 15.7998047,14.0620117 C16.3649117,13.3168908 16.6474609,12.2653063 16.6474609,10.9072266 C16.6474609,9.59016269 16.3637724,8.56022507 15.7963867,7.81738281 C15.2290011,7.07454056 14.4440154,6.703125 13.4414062,6.703125 C12.4342398,6.703125 11.6481148,7.07567987 11.0830078,7.82080078 C10.5179008,8.56592169 10.2353516,9.60155587 10.2353516,10.9277344 C10.2353516,12.2493556 10.5156222,13.2884077 11.0761719,14.0449219 C11.6367216,14.8014361 12.4114534,15.1796875 13.4003906,15.1796875 Z M20.1816406,16 L20.1816406,5.8828125 L25.8349609,5.8828125 L25.8349609,6.95605469 L21.6171875,6.95605469 L21.6171875,10.3466797 L25.1582031,10.3466797 L25.1582031,11.40625 L21.6171875,11.40625 L21.6171875,16 L20.1816406,16 Z M27.6875,16 L27.6875,5.8828125 L33.3408203,5.8828125 L33.3408203,6.95605469 L29.1230469,6.95605469 L29.1230469,10.3466797 L32.6640625,10.3466797 L32.6640625,11.40625 L29.1230469,11.40625 L29.1230469,16 L27.6875,16 Z M35.1933594,16 L35.1933594,5.8828125 L36.6289062,5.8828125 L36.6289062,14.9267578 L41.1816406,14.9267578 L41.1816406,16 L35.1933594,16 Z M42.6513672,16 L42.6513672,5.8828125 L44.0869141,5.8828125 L44.0869141,16 L42.6513672,16 Z M46.6914062,16 L46.6914062,5.8828125 L48.0996094,5.8828125 L53.1923828,13.6962891 L53.1923828,5.8828125 L54.4228516,5.8828125 L54.4228516,16 L53.0214844,16 L47.921875,8.18652344 L47.921875,16 L46.6914062,16 Z M57.0341797,16 L57.0341797,5.8828125 L62.6875,5.8828125 L62.6875,6.95605469 L58.4697266,6.95605469 L58.4697266,10.203125 L62.0039062,10.203125 L62.0039062,11.2626953 L58.4697266,11.2626953 L58.4697266,14.9267578 L62.9814453,14.9267578 L62.9814453,16 L57.0341797,16 Z" id="path-3"></path>
+        <filter x="-22.1%" y="-103.5%" width="147.9%" height="344.8%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="1" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-68.000000, -56.000000)">
+            <g id="offline" transform="translate(75.000000, 63.000000)">
+                <g id="Rectangle-2">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <rect stroke="#FFFFFF" stroke-width="1" stroke-linejoin="square" x="0.5" y="0.5" width="72" height="21" rx="8"></rect>
+                </g>
+                <g id="OFFLINE">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
